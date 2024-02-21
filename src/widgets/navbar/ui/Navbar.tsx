@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom"
+import { Text } from "@/shared/ui/Text";
+
 import cl from './Navbar.module.scss';
+import { Logo } from "@/shared/ui/Logo";
+import { HStack } from "@/shared/ui/Stack";
 
 export const Navbar = () => {
     return (
-        <div className={cl.navbar}>
-            <Link to={'/main'}>Main</Link>
-            <Link to={'/about'}>About</Link>
-        </div>
+        <HStack justify="center" className={cl.navbar}>
+            <Logo />
+        </HStack>
     )
 }

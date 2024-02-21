@@ -1,23 +1,10 @@
 .InputWrapper {
     display: flex;
     align-items: center;
-    border-radius: 48px;
-    padding: 8px 16px;
-    border: 2px solid var(--accent-color-10);
-    height: 32px;
+    padding: 10px 0;
+    height: 40px;
     width: 100%;
-}
-
-.s {
-    height: 32px;
-}
-
-.m {
-    height: 38px;
-}
-
-.l {
-    height: 44px;
+    border-bottom: 2px solid var(--gray);
 }
 
 .addonLeft,
@@ -33,24 +20,16 @@
     padding-right: 8px;
 }
 
-.focused {
-    border: 2px solid var(--accent-redesigned);
-
-    .addonLeft svg,
-    .addonRight svg {
-        color: var(--accent-redesigned);
-    }
-}
-
 .input {
     border: none;
     outline: none;
     width: 100%;
-    color: var(--text-redesigned);
+    font-size: 14px;
+    color: var(--gray-dark);
     background: none;
 
     &::placeholder {
-        color: var(--hint-redesigned);
+        color: var(--gray-dark);
     }
 }
 

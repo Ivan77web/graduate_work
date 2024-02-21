@@ -4,19 +4,15 @@ import {
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cl from './Button.module.scss';
 
-export type ButtonVariants = 'clear' | 'outline' | 'filled';
-export type ButtonBorderRadius = 'minBorder' | 'maxBorder';
-export type ButtonSize = 'm' | 'l' | 'xl';
+export type ButtonVariants = 'clear' | 'outline_red' | 'filled_red' | 'filled_black';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     variant?: ButtonVariants;
-    size?: ButtonSize;
     disabled?: boolean;
     fullWidth?: boolean;
     addonLeft?: ReactNode;
     addonRight?: ReactNode;
-    borderRadius?: ButtonBorderRadius;
 }
 
 export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
@@ -24,12 +20,10 @@ export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButt
         className,
         children,
         variant = 'outline',
-        size = 'm',
         disabled,
         fullWidth,
         addonLeft,
         addonRight,
-        borderRadius = 'minBorder',
         ...otherProps
     } = props;
 
@@ -42,7 +36,7 @@ export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButt
     return (
         <button
             type="button"
-            className={classNames(cl.Button, mods, [className, cl[variant], cl[size], cl[borderRadius]])}
+            className={classNames(cl.Button, mods, [className, cl[variant]])}
             disabled={disabled}
             {...otherProps}
             ref={ref}

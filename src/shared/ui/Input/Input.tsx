@@ -2,13 +2,13 @@ import React, {
     InputHTMLAttributes, ReactNode, memo, useEffect, useRef, useState,
 } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
-import cl from './Input.module.scss';
+
 import { HStack } from '../Stack';
 import { Text } from '../Text';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly' | 'size'>
+import cl from './Input.module.scss';
 
-type InputSize = 's' | 'm' | 'l';
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
 interface InputProps extends HTMLInputProps {
     className?: string;
@@ -19,7 +19,6 @@ interface InputProps extends HTMLInputProps {
     readOnly?: boolean;
     addonLeft?: ReactNode;
     addonRight?: ReactNode;
-    size?: InputSize;
 }
 
 export const Input = memo((props: InputProps) => {

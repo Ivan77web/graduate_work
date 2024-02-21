@@ -1,0 +1,8 @@
+.optionItem{
+    height: 32px;
+}
+
+.optionItem:hover{
+    background: var(--gray-light);
+    cursor: pointer;
+}

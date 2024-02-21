@@ -1,8 +1,8 @@
 .Button {
     cursor: pointer;
-    padding: 6px 16px;
     display: flex;
-    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 
 .clear {
@@ -10,38 +10,39 @@
     border: none;
     background: none;
     outline: none;
+    color: var(--gray-dark);
+}
+
+.filled_red {
+    border: none;
+    outline: none;
+    padding: 16px 32px;
+    color: var(--black-dark);
+    background: var(--red);
+}
+
+.filled_black {
+    border: none;
+    outline: none;
+    padding: 16px 32px;
+    color: var(--red);
+    background: var(--black-light);
+}
+
+.outline_red {
+    background: none;
+    border: 2px solid var(--red);
+    color: var(--red);
+    padding: 16px 32px;
 }
 
 .withAddon {
     padding: 0 16px;
 }
 
-.filled {
-    background: var(--accent-color-10);
-    border: none;
-    outline: none;
-}
-
-.outline {
-    background: none;
-    border: 2px solid var(--accent-color-10);
-}
-
 .addonLeft,
 .addonRight {
     display: flex;
-}
-
-.m {
-    font: var(--font-m);
-}
-
-.l {
-    font: var(--font-l);
-}
-
-.xl {
-    font: var(--font-xl);
 }
 
 .disabled {
@@ -50,13 +51,5 @@
 
 .fullWidth {
     width: 100%;
-}
-
-.minBorder{
-    border-radius: 16px;
-}
-
-.maxBorder{
-    border-radius: 46px;
 }
 

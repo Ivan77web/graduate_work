@@ -4,9 +4,13 @@ import cl from './Icon.module.scss';
 
 type SVGProps = Omit<React.SVGProps<SVGSVGElement>, 'onClick'>;
 
+type ColorSVG = 'gray' | 'red' | 'gray-black' | 'green';
+
 interface IconBaseProps extends SVGProps {
     className?: string;
     Svg: React.VFC<React.SVGProps<SVGSVGElement>>;
+    colorSVG?: ColorSVG;
+    isRotate?: boolean;
 }
 
 interface NonClickableIconProps extends IconBaseProps {
@@ -27,12 +31,14 @@ export const Icon = memo((props: IconProps) => {
         width = 32,
         height = 32,
         clickable,
+        colorSVG = 'gray',
+        isRotate,
         ...otherProps
     } = props;
 
     const icon = (
         <Svg
-            className={classNames(cl.icon, {}, [className])}
+            className={classNames(cl.icon, {[cl.rotate]: isRotate}, [className, cl[colorSVG]])}
             width={width}
             height={height}
             {...otherProps}

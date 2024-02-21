@@ -1,30 +1,54 @@
 :root {
-    --font-family-main: "Montserrat Alternates", sans-serif;
-    --font-family-text-logo: "Caveat Brush", sans-serif;
+    --font-family-main: "Mulish", sans-serif;
 
-    // size s
-    --font-size-s: 12px;
-    --font-line-s: 16px;
-    --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
+    // size 10
+    --font-size-10: 10px;
+    --font-line-10: 14px;
+    --font-10: var(--font-size-10) / var(--font-line-10) var(--font-family-main);
 
-    // size m
-    --font-size-m: 16px;
-    --font-line-m: 24px;
-    --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
+    // size 14
+    --font-size-14: 14px;
+    --font-line-14: 18px;
+    --font-14: var(--font-size-14) / var(--font-line-14) var(--font-family-main);
 
-    // size l
-    --font-size-l: 24px;
-    --font-line-l: 32px;
-    --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+    // size 16
+    --font-size-16: 16px;
+    --font-line-16: 24px;
+    --font-16: var(--font-size-16) / var(--font-line-16) var(--font-family-main);
 
-    // size xl
-    --font-size-xl: 32px;
-    --font-line-xl: 40px;
-    --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
+    // size 20
+    --font-size-20: 20px;
+    --font-line-20: 28px;
+    --font-20: var(--font-size-20) / var(--font-line-20) var(--font-family-main);
+
+    // size 30
+    --font-size-30: 30px;
+    --font-line-30: 38px;
+    --font-30: var(--font-size-30) / var(--font-line-30) var(--font-family-main);
+
+    // size 50
+    --font-size-50: 50px;
+    --font-line-50: 58px;
+    --font-50: var(--font-size-50) / var(--font-line-50) var(--font-family-main);
+
+    // size 70
+    --font-size-70: 70px;
+    --font-line-70: 78px;
+    --font-70: var(--font-size-70) / var(--font-line-70) var(--font-family-main);
 
     // Размеры
-    --accent-color-10: #8C64A5;
-    --accent-color-8: rgba(140, 100, 165, 0.8);
+    --navbar-height: 100px;
 
     // Цвета
+    --black: #000000;
+    --black-dark: #1C1D23;
+    --black-light: #222529;
+    --red: #FC4C33;
+    --white: #ffffff;
+    --gray-dark: #909293;
+    --gray: #E1E1E1;
+    --gray-light: #F1F1F1;
+    --green: #329F3D;
+    --gray-black: #5D5E62;
+    --gray-2: #BABBBF;
 }
