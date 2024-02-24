@@ -1,0 +1,20 @@
+// TODO 5%
+
+.mainPage{
+    height: calc(100vh - var(--navbar-height));
+    background: var(--black-dark);
+    padding: 0 5%;
+}
+
+.image{
+    position: absolute;
+    right: 5%;
+    top: calc(50vh - 250px);
+    height: 500px;
+}
+
+// TODO
+.blockText{
+    width: 500px;
+    margin-top: calc(50vh - 250px);
+}

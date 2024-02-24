@@ -13,6 +13,7 @@ interface TextProps {
     size?: TextSize;
     bold?: boolean;
     color?: TextColor;
+    isItalic?: boolean;
 }
 
 const mapSizeToClass: Record<TextSize, string> = {
@@ -32,7 +33,8 @@ export const Text = memo((props: TextProps) => {
         size = '14',
         color = 'black',
         bold,
-        align = 'left'
+        align = 'left',
+        isItalic
     } = props;
 
     const sizeClass = mapSizeToClass[size];
@@ -40,7 +42,7 @@ export const Text = memo((props: TextProps) => {
     const additionalClasses = [className, sizeClass, cl[align], cl[color]];
 
     return (
-        <p className={classNames(cl.text, { [cl.bold]: bold }, additionalClasses)}>
+        <p className={classNames(cl.text, { [cl.bold]: bold, [cl.italic]: isItalic}, additionalClasses)}>
             {text}
         </p>
     );
