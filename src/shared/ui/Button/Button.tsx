@@ -19,7 +19,7 @@ export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButt
     const {
         className,
         children,
-        variant = 'outline',
+        variant = 'clear',
         disabled,
         fullWidth,
         addonLeft,
