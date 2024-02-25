@@ -52,9 +52,9 @@ const ModalRegistration = () => {
                             bold
                         />
 
+                        {/* Добавить аддоны и линию */}
                         <VStack gap='24' max>
                             <Input
-                                type='password'
                                 placeholder={START_LOGIN}
                             />
                             <Input
@@ -62,6 +62,7 @@ const ModalRegistration = () => {
                                 placeholder={START_PASSWORD}
                             />
                             <Input
+                                type='password'
                                 placeholder={REPEAT_PASSWORD}
                             />
                         </VStack>

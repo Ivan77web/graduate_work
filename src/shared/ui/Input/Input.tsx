@@ -9,6 +9,7 @@ import { Text } from '../Text';
 import cl from './Input.module.scss';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
+export type StatusInput = 'successStatus' | 'errorStatus';
 
 interface InputProps extends HTMLInputProps {
     className?: string;
@@ -19,6 +20,7 @@ interface InputProps extends HTMLInputProps {
     readOnly?: boolean;
     addonLeft?: ReactNode;
     addonRight?: ReactNode;
+    status?: StatusInput;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -34,6 +36,7 @@ export const Input = memo((props: InputProps) => {
         addonRight,
         label,
         size = 'm',
+        status = 'successStatus',
         ...otherProps
     } = props;
 
@@ -67,7 +70,7 @@ export const Input = memo((props: InputProps) => {
     };
 
     const input = (
-        <div className={classNames(cl.InputWrapper, mods, [className, cl[size]])}>
+        <div className={classNames(cl.InputWrapper, mods, [className, cl[size], cl[status]])}>
             <div className={cl.addonLeft}>{addonLeft}</div>
             <input
                 ref={ref}
