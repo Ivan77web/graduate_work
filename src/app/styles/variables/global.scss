@@ -39,6 +39,10 @@
     // Размеры
     --navbar-height: 90px;
 
+    // z-индексы
+    --modal-z-index: 1000;
+    --overlay-z-index: 100;
+
     // Цвета
     --black: #000000;
     --black-dark: #1C1D23;
@@ -51,4 +55,6 @@
     --green: #329F3D;
     --gray-black: #5D5E62;
     --gray-2: #BABBBF;
+
+    --overlay-color: rgba(0 0 0 / 60%);
 }

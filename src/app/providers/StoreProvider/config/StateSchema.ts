@@ -1,5 +1,6 @@
 import { CounterSchema } from '@/entites/Counter';
 import { CounterSchema2 } from '@/entites/Counter2';
+import { ModalRegistrationSchema } from '@/widgets/modalRegistration';
 
 import {
     ReducersMapObject, AnyAction, CombinedState, EnhancedStore, Reducer,
@@ -8,7 +9,9 @@ import { AxiosInstance } from 'axios';
 
 export interface StateSchema {
     counter2: CounterSchema2;
+    
     counter?: CounterSchema;
+    modalRegistration?: ModalRegistrationSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
