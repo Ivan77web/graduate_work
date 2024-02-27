@@ -3,13 +3,12 @@ import React, {
 } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 
-import { HStack } from '../Stack';
+import { HStack, VStack } from '../Stack';
 import { Text } from '../Text';
 
 import cl from './Input.module.scss';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
-export type StatusInput = 'successStatus' | 'errorStatus';
 
 interface InputProps extends HTMLInputProps {
     className?: string;
@@ -20,7 +19,7 @@ interface InputProps extends HTMLInputProps {
     readOnly?: boolean;
     addonLeft?: ReactNode;
     addonRight?: ReactNode;
-    status?: StatusInput;
+    errorText?: string;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -36,7 +35,7 @@ export const Input = memo((props: InputProps) => {
         addonRight,
         label,
         size = 'm',
-        status = 'successStatus',
+        errorText = '',
         ...otherProps
     } = props;
 
@@ -67,25 +66,29 @@ export const Input = memo((props: InputProps) => {
         [cl.focused]: isFocused,
         [cl.withAddonLeft]: Boolean(addonLeft),
         [cl.withAddonRight]: Boolean(addonRight),
+        [cl.errorStatus]: Boolean(errorText),
     };
 
     const input = (
-        <div className={classNames(cl.InputWrapper, mods, [className, cl[size], cl[status]])}>
-            <div className={cl.addonLeft}>{addonLeft}</div>
-            <input
-                ref={ref}
-                type={type}
-                value={value}
-                onChange={onChangeHandler}
-                className={cl.input}
-                onFocus={onFocus}
-                onBlur={onBlur}
-                readOnly={readOnly}
-                placeholder={placeholder}
-                {...otherProps}
-            />
-            <div className={cl.addonRight}>{addonRight}</div>
-        </div>
+        <VStack max>
+            <div className={classNames(cl.InputWrapper, mods, [className, cl[size]])}>
+                <div className={cl.addonLeft}>{addonLeft}</div>
+                <input
+                    ref={ref}
+                    type={type}
+                    value={value}
+                    onChange={onChangeHandler}
+                    className={cl.input}
+                    onFocus={onFocus}
+                    onBlur={onBlur}
+                    readOnly={readOnly}
+                    placeholder={placeholder}
+                    {...otherProps}
+                />
+                <div className={cl.addonRight}>{addonRight}</div>
+            </div>
+            <Text color='red' text={errorText} size='14'/>
+        </VStack>
     );
 
     if (label) {

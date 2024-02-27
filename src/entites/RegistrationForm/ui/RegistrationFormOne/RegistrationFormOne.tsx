@@ -44,6 +44,7 @@ export const RegistrationFormOne = () => {
                 placeholder={NAME_FIRSTNAME}
                 value={name_firstname}
                 onChange={onChangeName}
+                errorText="123"
             />
             <Input
                 placeholder={AGE}
