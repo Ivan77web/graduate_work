@@ -1,10 +1,15 @@
 export interface RegistrationFormSchema {
-    name: string,
-    age: string,
-    education: string,
-    varinat: string,
-    gender: string,
-    login: string,
-    password: string,
-    repeat_password: string,
+    name: FormItem,
+    age: FormItem,
+    education: FormItem,
+    varinat: FormItem,
+    gender: FormItem,
+    login: FormItem,
+    password: FormItem,
+    repeat_password: FormItem,
+}
+
+export interface FormItem {
+    value: string;
+    errorText: string | null | boolean;
 }

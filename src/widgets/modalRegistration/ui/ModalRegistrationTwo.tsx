@@ -1,14 +1,14 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './ModalRegistration.module.scss';
 import { Text } from '@/shared/ui/Text';
-import { REGISTRATION } from '../lib/constants';
 import { HStack, VStack } from '@/shared/ui/Stack';
-import { Button } from '@/shared/ui/Button';
 import { RegistrationFormTwo } from '@/entites/RegistrationForm';
 import { Icon } from '@/shared/ui/Icon';
 import Arrow from '@/shared/assets/icons/arrow.svg';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ModalRegistrationActions } from '../model/slices/modalRegistration';
+import { Registration } from '@/features/registration';
+import { REGISTRATION } from '../lib/constants';
 
 const ModalRegistrationTwo = () => {
     const dispatch = useAppDispatch();
@@ -52,9 +52,7 @@ const ModalRegistrationTwo = () => {
 
             {/* TODO Вынести в фичу */}
             <HStack justify='end' max>
-                <Button variant='outline_red'>
-                    {REGISTRATION}
-                </Button>
+                <Registration />
             </HStack>
         </VStack>
     )

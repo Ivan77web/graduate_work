@@ -19,7 +19,7 @@ interface InputProps extends HTMLInputProps {
     readOnly?: boolean;
     addonLeft?: ReactNode;
     addonRight?: ReactNode;
-    errorText?: string;
+    errorText?: string | null | boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -35,7 +35,7 @@ export const Input = memo((props: InputProps) => {
         addonRight,
         label,
         size = 'm',
-        errorText = '',
+        errorText = null,
         ...otherProps
     } = props;
 
@@ -87,7 +87,7 @@ export const Input = memo((props: InputProps) => {
                 />
                 <div className={cl.addonRight}>{addonRight}</div>
             </div>
-            <Text color='red' text={errorText} size='14'/>
+            {errorText && <Text color='red' text={String(errorText)} size='14' />}
         </VStack>
     );
 

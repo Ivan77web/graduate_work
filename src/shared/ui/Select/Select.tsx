@@ -15,6 +15,7 @@ interface SelectProps {
     onChange: (value: string) => void;
     options: string[];
     placeholder?: string;
+    isError?: boolean | null | string;
 }
 
 export const Select = memo((props: SelectProps) => {
@@ -24,6 +25,7 @@ export const Select = memo((props: SelectProps) => {
         onChange,
         placeholder,
         options,
+        isError = false,
     } = props;
 
     const [isOpen, setIsOpen] = useState(false);
@@ -40,7 +42,7 @@ export const Select = memo((props: SelectProps) => {
     return (
         <div className={cl.wrapper}>
             <HStack
-                className={classNames(cl.SelectWrapper, {}, [className])}
+                className={classNames(cl.SelectWrapper, { [cl.error]: Boolean(isError) }, [className])}
                 gap='8'
                 justify='between'
                 align='center'

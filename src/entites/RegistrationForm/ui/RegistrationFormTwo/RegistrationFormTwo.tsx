@@ -13,37 +13,40 @@ export const RegistrationFormTwo = () => {
     const password = useSelector(getPassword);
     const repeatPassword = useSelector(getRepeatPassword);
 
-    const onChangeLogin = useCallback((value: string) => {
+    const onChangeLogin = (value: string) => {
         dispatch(RegistrationFormActions.setLogin(value));
-    }, [dispatch])
+    }
 
-    const onChangePassword = useCallback((value: string) => {
+    const onChangePassword = (value: string) => {
         dispatch(RegistrationFormActions.setPassword(value));
-    }, [dispatch])
+    }
 
-    const onChangeRepeatPassword = useCallback((value: string) => {
+    const onChangeRepeatPassword = (value: string) => {
         dispatch(RegistrationFormActions.setRepeatPassword(value));
-    }, [dispatch])
+    }
 
     // TODO Добавить аддоны и линию
     return (
         <VStack gap='24' max >
             <Input
                 placeholder={START_LOGIN}
-                value={login}
+                value={login.value}
                 onChange={onChangeLogin}
+                errorText={login.errorText}
             />
             <Input
                 type='password'
-                value={password}
+                value={password.value}
                 onChange={onChangePassword}
                 placeholder={START_PASSWORD}
+                errorText={password.errorText}
             />
             <Input
                 type='password'
                 placeholder={REPEAT_PASSWORD}
-                value={repeatPassword}
+                value={repeatPassword.value}
                 onChange={onChangeRepeatPassword}
+                errorText={repeatPassword.errorText}
             />
         </VStack >
     )

@@ -2,7 +2,7 @@ import { Input } from "@/shared/ui/Input"
 import { Select } from "@/shared/ui/Select"
 import { VStack } from "@/shared/ui/Stack"
 import { AGE, EDUCATION, GENDER, NAME_FIRSTNAME, VARIANT, education_options, gender_options, variant_options } from "../../lib/constants"
-import { useCallback, useState } from "react"
+import { useCallback } from "react"
 import { useSelector } from "react-redux"
 import { getAge, getEducation, getGender, getName, getVarinat } from "../../model/selectors/RegistrationForm"
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch"
@@ -42,32 +42,36 @@ export const RegistrationFormOne = () => {
         <VStack gap='24' max >
             <Input
                 placeholder={NAME_FIRSTNAME}
-                value={name_firstname}
+                value={name_firstname.value}
                 onChange={onChangeName}
-                errorText="123"
+                errorText={name_firstname.errorText}
             />
             <Input
                 placeholder={AGE}
-                value={age}
+                value={age.value}
                 onChange={onChangeAge}
+                errorText={age.errorText}
             />
             <Select
                 options={education_options}
-                value={education}
+                value={education.value}
                 onChange={onChangeEducation}
                 placeholder={EDUCATION}
+                isError={education.errorText}
             />
             <Select
                 options={variant_options}
-                value={variant}
+                value={variant.value}
                 onChange={onChangeVariant}
                 placeholder={VARIANT}
+                isError={variant.errorText}
             />
             <Select
                 options={gender_options}
-                value={gender}
+                value={gender.value}
                 onChange={onChangeGender}
                 placeholder={GENDER}
+                isError={gender.errorText}
             />
         </VStack >
     )
