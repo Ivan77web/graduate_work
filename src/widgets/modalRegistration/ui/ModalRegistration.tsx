@@ -24,8 +24,7 @@ const ModalRegistration = () => {
         <ModalRegistrationOne />
         :
         <ModalRegistrationTwo />
-
-    // TODO валидность инпутов
+        
     return (
         <Modal
             isOpen={isOpen}

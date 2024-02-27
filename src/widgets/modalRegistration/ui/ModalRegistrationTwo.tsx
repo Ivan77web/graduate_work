@@ -17,7 +17,6 @@ const ModalRegistrationTwo = () => {
         dispatch(ModalRegistrationActions.setStep('first'));
     }
 
-    // TODO валидность инпутов
     return (
         <VStack
             className={classNames(cl.modalRegistration, {}, [])}
@@ -50,7 +49,6 @@ const ModalRegistrationTwo = () => {
                 <RegistrationFormTwo />
             </VStack>
 
-            {/* TODO Вынести в фичу */}
             <HStack justify='end' max>
                 <Registration />
             </HStack>

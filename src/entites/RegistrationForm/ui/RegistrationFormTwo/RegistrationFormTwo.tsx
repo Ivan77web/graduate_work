@@ -25,7 +25,6 @@ export const RegistrationFormTwo = () => {
         dispatch(RegistrationFormActions.setRepeatPassword(value));
     }
 
-    // TODO Добавить аддоны и линию
     return (
         <VStack gap='24' max >
             <Input

@@ -36,8 +36,6 @@ export const RegistrationFormOne = () => {
         dispatch(RegistrationFormActions.setGender(value));
     }, [dispatch])
 
-    // TODO Добавить аддоны и линию
-
     return (
         <VStack gap='24' max >
             <Input
