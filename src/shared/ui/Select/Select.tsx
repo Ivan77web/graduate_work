@@ -1,7 +1,6 @@
 import { memo, useCallback, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import Arrow from '@/shared/assets/icons/arrow.svg';
-import { SelectOption } from '@/shared/types/ui';
 
 import { Text } from '../Text';
 import { HStack } from '../Stack';
@@ -12,9 +11,9 @@ import { Options } from './Options/Options';
 
 interface SelectProps {
     className?: string;
-    value: SelectOption | null;
-    onChange: (value: SelectOption) => void;
-    options: SelectOption[];
+    value: string | null;
+    onChange: (value: string) => void;
+    options: string[];
     placeholder?: string;
 }
 
@@ -33,7 +32,7 @@ export const Select = memo((props: SelectProps) => {
         setIsOpen(prev => !prev);
     }, [setIsOpen])
 
-    const onClick = useCallback((value: SelectOption) => {
+    const onClick = useCallback((value: string) => {
         setIsOpen(false);
         onChange(value);
     }, [setIsOpen])
@@ -47,8 +46,8 @@ export const Select = memo((props: SelectProps) => {
                 align='center'
                 onClick={onOpen}
             >
-                {value?.value && <Text text={value.value} size='14' color='gray-dark' />}
-                {!value?.value && <Text text={placeholder} size='14' color='gray' />}
+                {value && <Text text={value} size='14' color='gray-dark' />}
+                {!value && <Text text={placeholder} size='14' color='gray-dark' />}
                 <Icon Svg={Arrow} colorSVG='gray' width={20} height={20} isRotate={isOpen} />
             </HStack>
 

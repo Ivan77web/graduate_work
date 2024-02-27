@@ -14,8 +14,6 @@ export const Navbar = () => {
     const dispatch = useAppDispatch();
 
     const onOpenModalRegistration = useCallback(() => {
-        console.log();
-        
         dispatch(ModalRegistrationActions.open());
     }, [dispatch, ModalRegistrationActions]);
 
@@ -33,14 +31,18 @@ export const Navbar = () => {
             >
                 <Button
                     variant="filled_black"
-                    onClick={onOpenModalRegistration}
                 >
                     {LOGIN}
                 </Button>
-                <Button variant="filled_red">{REGISTRATION}</Button>
+                <Button
+                    onClick={onOpenModalRegistration}
+                    variant="filled_red"
+                >
+                    {REGISTRATION}
+                </Button>
             </HStack>
 
-            <ModalRegistration/>
+            <ModalRegistration />
         </HStack>
     )
 }

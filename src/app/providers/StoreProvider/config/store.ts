@@ -4,7 +4,8 @@ import {
 import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { $api } from '@/shared/api/api';
-import { CounterReducer2 } from '@/entites/Counter2';
+import { ModalRegistrationReducer } from '@/widgets/modalRegistration';
+import { RegistrationFormReducer } from '@/entites/RegistrationForm';
 
 export function createReduxStore(
     initialState?: StateSchema,
@@ -12,7 +13,8 @@ export function createReduxStore(
 ) {
     const rootReducer: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
-        counter2: CounterReducer2
+        modalRegistration: ModalRegistrationReducer,
+        registrationForm: RegistrationFormReducer,
     };
 
     const reducerManager = createReducerManager(rootReducer);

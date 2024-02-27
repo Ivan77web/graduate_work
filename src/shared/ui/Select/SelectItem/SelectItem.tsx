@@ -1,5 +1,4 @@
 import { memo } from 'react';
-import { SelectOption } from '@/shared/types/ui';
 
 import { Text } from '../../Text';
 import { HStack } from '../../Stack';
@@ -7,8 +6,8 @@ import { HStack } from '../../Stack';
 import cl from './SelectItem.module.scss';
 
 interface SelectItemProps {
-    option: SelectOption;
-    onClick: (value: SelectOption) => void;
+    option: string;
+    onClick: (value: string) => void;
 }
 
 export const SelectItem = memo(({ option, onClick }: SelectItemProps) => {
@@ -18,7 +17,7 @@ export const SelectItem = memo(({ option, onClick }: SelectItemProps) => {
             align='center'
             onClick={() => onClick(option)}
         >
-            <Text text={option.value} size='14' color='gray-dark' />
+            <Text text={option} size='14' color='gray-dark' />
         </HStack>
     );
 });

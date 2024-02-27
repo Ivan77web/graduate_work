@@ -1,8 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ModalRegistrationSchema } from '../types/ModalRegistrationSchema';
+import { ModalRegistrationSchema, Step } from '../types/ModalRegistrationSchema';
 
 const initialState: ModalRegistrationSchema = {
-    isOpen: false
+    isOpen: false,
+    step: 'first',
 };
 
 export const ModalRegistrationSlice = createSlice({
@@ -14,6 +15,9 @@ export const ModalRegistrationSlice = createSlice({
         },
         close: (state) => {
             state.isOpen = false;
+        },
+        setStep: (state, action: PayloadAction<Step>) => {
+            state.step = action.payload;
         },
     },
 });

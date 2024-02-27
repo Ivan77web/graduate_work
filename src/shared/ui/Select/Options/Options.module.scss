@@ -1,0 +1,10 @@
+.optionalBlock{
+    position: absolute;
+    margin-top: 10px;
+    z-index: var(--modal-z-index);
+    width: 100%;
+    background: var(--white);
+    padding: 8px;
+    box-shadow: 0 2px 10px 0 var(--gray-2);
+    border-radius: 4px;
+}

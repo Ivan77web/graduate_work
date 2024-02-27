@@ -1,4 +1,3 @@
-import { SelectOption } from "@/shared/types/ui";
 import { memo } from "react";
 import cl from './Options.module.scss';
 
@@ -6,8 +5,8 @@ import { SelectItem } from "../SelectItem/SelectItem";
 
 interface OptionsProps {
     isOpen: boolean;
-    options: SelectOption[];
-    onClick: (value: SelectOption) => void;
+    options: string[];
+    onClick: (value: string) => void;
 
 }
 
@@ -26,7 +25,7 @@ export const Options = memo((props: OptionsProps) => {
                         {
                             options.map(option =>
                                 <SelectItem
-                                    key={option.code}
+                                    key={option}
                                     option={option}
                                     onClick={onClick}
                                 />

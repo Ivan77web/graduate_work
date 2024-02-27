@@ -1,5 +1,4 @@
-import { CounterSchema } from '@/entites/Counter';
-import { CounterSchema2 } from '@/entites/Counter2';
+import { RegistrationFormSchema } from '@/entites/RegistrationForm';
 import { ModalRegistrationSchema } from '@/widgets/modalRegistration';
 
 import {
@@ -7,11 +6,11 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 
+// TODO Заасинхронить редьюсеры
+
 export interface StateSchema {
-    counter2: CounterSchema2;
-    
-    counter?: CounterSchema;
-    modalRegistration?: ModalRegistrationSchema;
+    modalRegistration: ModalRegistrationSchema;
+    registrationForm: RegistrationFormSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;
