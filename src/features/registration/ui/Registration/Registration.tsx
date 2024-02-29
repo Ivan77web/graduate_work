@@ -1,10 +1,11 @@
+import { useSelector } from "react-redux"
+
 import { Button } from "@/shared/ui/Button"
-import { REGISTRATION } from "../../lib/constants"
-import { useCallback } from "react"
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch"
 import { getRegistrationForm } from "@/entites/RegistrationForm"
-import { useSelector } from "react-redux"
-import { RegistrationFormActions } from "@/entites/RegistrationForm/model/slices/RegistrationFormSlice"
+import { RegistrationFormActions } from "@/entites/RegistrationForm";
+
+import { FIELD_REQUIRED, PASSWORD_NOT_MATCH, REGISTRATION } from "../../lib/constants"
 
 export const Registration = () => {
     const dispatch = useAppDispatch();
@@ -15,14 +16,14 @@ export const Registration = () => {
 
         if (registrationForm.login.value === '') {
             isError = true;
-            dispatch(RegistrationFormActions.setLoginErrorText('Поле обязательно'));
+            dispatch(RegistrationFormActions.setLoginErrorText(FIELD_REQUIRED));
         } else {
             dispatch(RegistrationFormActions.setLoginErrorText(null));
         }
 
         if (registrationForm.password.value === '') {
             isError = true;
-            dispatch(RegistrationFormActions.setPasswordErrorText('Поле обязательно'));
+            dispatch(RegistrationFormActions.setPasswordErrorText(FIELD_REQUIRED));
         } else {
             dispatch(RegistrationFormActions.setPasswordErrorText(null));
         }
@@ -31,9 +32,9 @@ export const Registration = () => {
             isError = true;
 
             if (registrationForm.repeat_password.value === '') {
-                dispatch(RegistrationFormActions.setRepeatPasswordErrorText('Поле обязательно'));
+                dispatch(RegistrationFormActions.setRepeatPasswordErrorText(FIELD_REQUIRED));
             } else {
-                dispatch(RegistrationFormActions.setRepeatPasswordErrorText('Пароль не совпадает'));
+                dispatch(RegistrationFormActions.setRepeatPasswordErrorText(PASSWORD_NOT_MATCH));
             }
 
         } else {

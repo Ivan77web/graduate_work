@@ -1,11 +1,14 @@
 import {
     CombinedState, configureStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { createReducerManager } from './reducerManager';
-import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { $api } from '@/shared/api/api';
 import { ModalRegistrationReducer } from '@/widgets/modalRegistration';
 import { RegistrationFormReducer } from '@/entites/RegistrationForm';
+import { LoginFormReducer } from '@/entites/LoginForm';
+import { ModalLoginReducer } from '@/widgets/modalLogin';
+
+import { createReducerManager } from './reducerManager';
+import { StateSchema, ThunkExtraArg } from './StateSchema';
 
 export function createReduxStore(
     initialState?: StateSchema,
@@ -15,6 +18,8 @@ export function createReduxStore(
         ...asyncReducers,
         modalRegistration: ModalRegistrationReducer,
         registrationForm: RegistrationFormReducer,
+        modalLogin: ModalLoginReducer,
+        loginForm: LoginFormReducer,
     };
 
     const reducerManager = createReducerManager(rootReducer);

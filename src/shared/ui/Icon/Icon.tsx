@@ -36,28 +36,32 @@ export const Icon = memo((props: IconProps) => {
         ...otherProps
     } = props;
 
-    const icon = (
+    if (clickable) {
+        return (
+            <button
+                type="button"
+                className={classNames(cl.button, {}, [className])}
+                onClick={props.onClick}
+                style={{ height, width }}
+            >
+                <Svg
+                    className={classNames(cl.icon, { [cl.rotate]: isRotate }, [cl[colorSVG]])}
+                    width={width}
+                    height={height}
+                    {...otherProps}
+                    onClick={undefined}
+                />
+            </button>
+        );
+    }
+
+    return (
         <Svg
-            className={classNames(cl.icon, {[cl.rotate]: isRotate}, [className, cl[colorSVG]])}
+            className={classNames(cl.icon, { [cl.rotate]: isRotate }, [className, cl[colorSVG]])}
             width={width}
             height={height}
             {...otherProps}
             onClick={undefined}
         />
     );
-
-    if (clickable) {
-        return (
-            <button
-                type="button"
-                className={cl.button}
-                onClick={props.onClick}
-                style={{ height, width }}
-            >
-                {icon}
-            </button>
-        );
-    }
-
-    return icon;
 });

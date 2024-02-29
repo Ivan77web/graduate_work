@@ -1,4 +1,6 @@
+import { LoginFormSchema } from '@/entites/LoginForm';
 import { RegistrationFormSchema } from '@/entites/RegistrationForm';
+import { ModalLoginSchema } from '@/widgets/modalLogin';
 import { ModalRegistrationSchema } from '@/widgets/modalRegistration';
 
 import {
@@ -10,7 +12,9 @@ import { AxiosInstance } from 'axios';
 
 export interface StateSchema {
     modalRegistration: ModalRegistrationSchema;
-    registrationForm: RegistrationFormSchema
+    registrationForm: RegistrationFormSchema;
+    modalLogin: ModalLoginSchema;
+    loginForm: LoginFormSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

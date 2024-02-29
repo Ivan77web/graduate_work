@@ -5,6 +5,7 @@ import { HStack } from "@/shared/ui/Stack";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { ModalRegistration, ModalRegistrationActions } from "@/widgets/modalRegistration";
+import { ModalLogin, ModalLoginActions } from "@/widgets/modalLogin";
 
 import { LOGIN, LOGO, REGISTRATION } from "../lib/constants";
 
@@ -16,6 +17,10 @@ export const Navbar = () => {
     const onOpenModalRegistration = useCallback(() => {
         dispatch(ModalRegistrationActions.open());
     }, [dispatch, ModalRegistrationActions]);
+
+    const onOpenModalLogin = useCallback(() => {
+        dispatch(ModalLoginActions.open());
+    }, [dispatch, ModalLoginActions]);
 
     return (
         <HStack justify="between" className={classNames(cl.navbar, {}, [''])}>
@@ -31,6 +36,7 @@ export const Navbar = () => {
             >
                 <Button
                     variant="filled_black"
+                    onClick={onOpenModalLogin}
                 >
                     {LOGIN}
                 </Button>
@@ -42,6 +48,7 @@ export const Navbar = () => {
                 </Button>
             </HStack>
 
+            <ModalLogin />
             <ModalRegistration />
         </HStack>
     )

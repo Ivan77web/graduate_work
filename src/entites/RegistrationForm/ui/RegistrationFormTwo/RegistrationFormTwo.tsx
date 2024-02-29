@@ -1,11 +1,12 @@
+import { useSelector } from "react-redux";
+
 import { Input } from "@/shared/ui/Input"
 import { VStack } from "@/shared/ui/Stack"
-import { REPEAT_PASSWORD, START_LOGIN, START_PASSWORD } from "../../lib/constants"
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { useSelector } from "react-redux";
+
+import { REPEAT_PASSWORD, START_LOGIN, START_PASSWORD } from "../../lib/constants"
 import { getLogin, getPassword, getRepeatPassword } from "../../model/selectors/RegistrationForm";
 import { RegistrationFormActions } from "../../model/slices/RegistrationFormSlice";
-import { useCallback } from "react";
 
 export const RegistrationFormTwo = () => {
     const dispatch = useAppDispatch();
