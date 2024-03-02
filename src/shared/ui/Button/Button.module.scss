@@ -47,6 +47,8 @@
 
 .disabled {
     opacity: 0.5;
+    cursor: wait;
+    pointer-events: none;
 }
 
 .fullWidth {

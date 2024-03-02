@@ -6,10 +6,13 @@ import { getLoginForm } from "@/entites/LoginForm";
 import { LoginFormActions } from "@/entites/LoginForm";
 
 import { LOGIN } from "../../lib/constants";
+import { loginReq } from "../../model/services/login/LoginReq";
+import { getLoginLoading } from "../../model/selectors/login";
 
 export const Login = () => {
     const dispatch = useAppDispatch();
     const loginForm = useSelector(getLoginForm);
+    const loginIsLoading = useSelector(getLoginLoading);
 
     const isError = () => {
         let isError = false;
@@ -35,8 +38,9 @@ export const Login = () => {
         const error = isError();
 
         if (!error) {
-            console.log(loginForm.login.value);
-            console.log(loginForm.password.value);
+            dispatch(LoginFormActions.setLogin(''));
+            dispatch(LoginFormActions.setPassword(''));
+            dispatch(loginReq({ login: loginForm.login.value, password: loginForm.password.value }))
         }
     };
 
@@ -44,6 +48,7 @@ export const Login = () => {
         <Button
             variant='outline_red'
             onClick={onLogin}
+            disabled={loginIsLoading}
         >
             {LOGIN}
         </Button>

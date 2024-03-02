@@ -1,5 +1,7 @@
 import { LoginFormSchema } from '@/entites/LoginForm';
 import { RegistrationFormSchema } from '@/entites/RegistrationForm';
+import { UserSchema } from '@/entites/User';
+import { LoginSchema } from '@/features/login';
 import { ModalLoginSchema } from '@/widgets/modalLogin';
 import { ModalRegistrationSchema } from '@/widgets/modalRegistration';
 
@@ -15,6 +17,8 @@ export interface StateSchema {
     registrationForm: RegistrationFormSchema;
     modalLogin: ModalLoginSchema;
     loginForm: LoginFormSchema;
+    user: UserSchema;
+    loginFeature: LoginSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

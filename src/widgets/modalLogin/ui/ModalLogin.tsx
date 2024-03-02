@@ -14,6 +14,7 @@ import { ModalLoginActions } from '../model/slices/modalLogin';
 import { LOGIN } from '../lib/constants';
 
 import cl from './ModalLogin.module.scss';
+import { ErrorBlock } from './ErrorBlock';
 
 const ModalLogin = () => {
     const dispatch = useAppDispatch();
@@ -47,6 +48,8 @@ const ModalLogin = () => {
 
                     <LoginForm />
                 </VStack>
+
+                <ErrorBlock />
 
                 <HStack justify='end' max>
                     <Login />

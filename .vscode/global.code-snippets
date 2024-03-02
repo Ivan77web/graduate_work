@@ -1,0 +1,93 @@
+{
+	"react-component": {
+		"scope": "javascriptreact, typescriptreact",
+		"prefix": "myrc",
+		"body": [
+			"import { memo } from 'react';",
+			"import { classNames } from '@/shared/lib/classNames/classNames';",
+			"import cl from './${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}.module.scss';",
+			"",
+			"interface ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props{",
+			"    className?: string;",
+			"}",
+			"",
+			"export const ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/} = memo(({className}: ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props) => {",
+			"    return(",
+			"        <div className={classNames(cl.${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}, {}, [className])}>",
+			"            ",
+			"        </div>",
+			"    );",
+			"});",
+			"",
+		],
+		"description": "react-component"
+	},
+	"testing": {
+		"prefix": "myTest",
+		"body": [
+			"describe('${TM_FILENAME_BASE}', () => {",
+			"    test('', () => {",
+			"        expect().toEqual();",
+			"    });",
+			"});"
+		],
+		"description": "testing"
+	},
+	"slice": {
+		"prefix": "mySlice",
+		"body": [
+			"import { createSlice, PayloadAction } from '@reduxjs/toolkit';",
+			"import { ${TM_FILENAME_BASE/Slice$//gi}, ${TM_FILENAME_BASE/Slice$//gi}Schema } from '../types/${TM_FILENAME_BASE/Slice$//gi}';",
+			"",
+			"const initialState: ${TM_FILENAME_BASE/Slice$//gi}Schema = {",
+			"    isLoading: false,",
+			"    data: undefined,",
+			"    error: undefined,",
+			"};",
+			"",
+			"export const ${TM_FILENAME_BASE} = createSlice({",
+			"    name: '${TM_FILENAME_BASE/Slice$//gi}',",
+			"    initialState,",
+			"    reducers: {},",
+			"});",
+			"",
+			"export const { actions: ${TM_FILENAME_BASE/Slice$//gi}Actions } = ${TM_FILENAME_BASE};",
+			"export const { reducer: ${TM_FILENAME_BASE/Slice$//gi}Reducer } = ${TM_FILENAME_BASE};",
+			""
+		],
+		"description": "redux slice"
+	},
+	"asuncFunc": {
+		"prefix": "myAsunc",
+		"body": [
+			"import { createAsyncThunk } from '@reduxjs/toolkit';",
+			"import { ThunkConfig } from 'app/providers/StoreProvider';",
+			"",
+			"export const ${TM_FILENAME_BASE} = createAsyncThunk<$1, $2, ThunkConfig<>>(",
+			"    '$3/$4',",
+			"    async ($5, thunkApi) => {",
+			"        const { extra, rejectWithValue } = thunkApi;",
+			"        ",
+			"        try {",
+			"            const response = await extra.api.get<$6>('/$7', {",
+			"                params: {",
+			"                    _expand: 'user',",
+			"                },",
+			"            });",
+			"",
+			"            if (!response.data) {",
+			"                throw new Error();",
+			"            }",
+			"",
+			"            return response.data;",
+			"        } catch (e) {",
+			"            return rejectWithValue('error2');",
+			"        }",
+			"    },",
+			");",
+			"",
+		],
+		"description": "redux slice"
+	},
+	
+}
