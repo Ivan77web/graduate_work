@@ -9,7 +9,7 @@ import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { ModalRegistration, ModalRegistrationActions } from "@/widgets/modalRegistration";
 import { ModalLogin, ModalLoginActions } from "@/widgets/modalLogin";
 
-import { LOGIN, LOGO, LOGOUT, REGISTRATION } from "../lib/constants";
+import { LOGIN, LOGO, REGISTRATION } from "../lib/constants";
 
 import cl from './Navbar.module.scss';
 
@@ -41,31 +41,19 @@ export const Navbar = () => {
                 justify="between"
                 gap="32"
             >
-                {
-                    authData
-                        ?
-                        <Button
-                            variant="filled_black"
-                            onClick={onLogout}
-                        >
-                            {LOGOUT}
-                        </Button>
-                        :
-                        <>
-                            <Button
-                                variant="filled_black"
-                                onClick={onOpenModalLogin}
-                            >
-                                {LOGIN}
-                            </Button>
-                            <Button
-                                onClick={onOpenModalRegistration}
-                                variant="filled_red"
-                            >
-                                {REGISTRATION}
-                            </Button>
-                        </>
-                }
+                <Button
+                    variant="filled_black"
+                    onClick={onOpenModalLogin}
+                >
+                    {LOGIN}
+                </Button>
+                <Button
+                    onClick={onOpenModalRegistration}
+                    variant="filled_red"
+                >
+                    {REGISTRATION}
+                </Button>
+
             </HStack>
 
             <ModalLogin />

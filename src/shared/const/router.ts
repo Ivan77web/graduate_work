@@ -1,10 +1,14 @@
+export enum AppRoutesWithoutAuth {
+    'MAIN',
+}
+
 export enum AppRoutes {
     'MAIN',
-    'ABOUT',
+    'SECTIONS',
     'NOT_FOUND_PAGE'
 }
 
 export const getPathMain = () => '/';
-export const getPathAbout = () => '/about';
-export const getPathNotFoundPage = () => '/not_found';
+export const getPathSections = () => '/sections';
+export const getPathNotFoundPage = () => '*';
 

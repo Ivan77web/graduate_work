@@ -1,8 +1,10 @@
+import { Page } from "@/shared/ui/Page";
+
 const NotFoundPage = () => {
     return (
-        <div>
-            Not found page
-        </div>
+        <Page>
+            Страницы не существует
+        </Page>
     )
 }
 
