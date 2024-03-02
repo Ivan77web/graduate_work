@@ -47,9 +47,11 @@ const ModalLogin = () => {
                     />
 
                     <LoginForm />
-                </VStack>
 
-                <ErrorBlock />
+                    <HStack max>
+                        <ErrorBlock />
+                    </HStack>
+                </VStack>
 
                 <HStack justify='end' max>
                     <Login />

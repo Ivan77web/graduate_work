@@ -29,6 +29,12 @@ export const LoginFormSlice = createSlice({
         setPasswordErrorText: (state, action: PayloadAction<string | null>) => {
             state.password.errorText = action.payload;
         },
+        reset: (state) => {
+            state.login.value = '';
+            state.login.errorText = null;
+            state.password.value = '';
+            state.password.errorText = null;
+        },
     },
 });
 

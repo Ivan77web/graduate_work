@@ -16,7 +16,7 @@ export const initAuthData = createAsyncThunk<User, void, ThunkConfig<string>>(
         }
 
         try {
-            const response = await extra.api.get<User>(`/users/${userId}`);
+            const response = await extra.api.post<User>(`/findUserById`, {id: userId});
 
             return response.data;
         } catch (e) {

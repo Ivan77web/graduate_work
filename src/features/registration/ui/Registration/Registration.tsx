@@ -6,10 +6,13 @@ import { getRegistrationForm } from "@/entites/RegistrationForm"
 import { RegistrationFormActions } from "@/entites/RegistrationForm";
 
 import { FIELD_REQUIRED, PASSWORD_NOT_MATCH, REGISTRATION } from "../../lib/constants"
+import { registartionReq } from "../../model/services/registration/RegistrationReq";
+import { getRegistrationLoading } from "../../model/selectors/registration";
 
 export const Registration = () => {
     const dispatch = useAppDispatch();
     const registrationForm = useSelector(getRegistrationForm);
+    const registrationIsLoading = useSelector(getRegistrationLoading);
 
     const isError = () => {
         let isError = false;
@@ -48,15 +51,15 @@ export const Registration = () => {
         const error = isError();
 
         if (!error) {
-            console.log(registrationForm.name.value);
-            console.log(registrationForm.age.value);
-            console.log(registrationForm.education.value);
-            console.log(registrationForm.varinat.value);
-            console.log(registrationForm.gender.value);
-            console.log(registrationForm.login.value);
-            console.log(registrationForm.password.value);
-            console.log(registrationForm.repeat_password.value);
-
+            dispatch(registartionReq({
+                name: registrationForm.name.value,
+                age: registrationForm.age.value,
+                education: registrationForm.education.value,
+                varinat: registrationForm.varinat.value,
+                gender: registrationForm.gender.value,
+                login: registrationForm.login.value,
+                password: registrationForm.password.value,
+            }));
         }
     };
 
@@ -64,6 +67,7 @@ export const Registration = () => {
         <Button
             variant='outline_red'
             onClick={onRegistration}
+            disabled={registrationIsLoading}
         >
             {REGISTRATION}
         </Button>

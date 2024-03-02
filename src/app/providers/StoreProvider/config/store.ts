@@ -8,6 +8,7 @@ import { LoginFormReducer } from '@/entites/LoginForm';
 import { ModalLoginReducer } from '@/widgets/modalLogin';
 import { userReducer } from '@/entites/User';
 import { loginReducer } from '@/features/login';
+import { registartionReducer } from '@/features/registration';
 
 import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
@@ -24,6 +25,7 @@ export function createReduxStore(
         loginForm: LoginFormReducer,
         user: userReducer,
         loginFeature: loginReducer,
+        registrationFeature: registartionReducer,
     };
 
     const reducerManager = createReducerManager(rootReducer);

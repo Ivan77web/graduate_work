@@ -1,14 +1,17 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cl from './ModalRegistration.module.scss';
 import { Text } from '@/shared/ui/Text';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { RegistrationFormTwo } from '@/entites/RegistrationForm';
 import { Icon } from '@/shared/ui/Icon';
 import Arrow from '@/shared/assets/icons/arrow.svg';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ModalRegistrationActions } from '../model/slices/modalRegistration';
 import { Registration } from '@/features/registration';
+
+import { ModalRegistrationActions } from '../model/slices/modalRegistration';
 import { REGISTRATION } from '../lib/constants';
+
+import { ErrorBlock } from './ErrorBlock';
+import cl from './ModalRegistration.module.scss';
 
 const ModalRegistrationTwo = () => {
     const dispatch = useAppDispatch();
@@ -47,6 +50,10 @@ const ModalRegistrationTwo = () => {
                 />
 
                 <RegistrationFormTwo />
+
+                <HStack max>
+                    <ErrorBlock />
+                </HStack>
             </VStack>
 
             <HStack justify='end' max>

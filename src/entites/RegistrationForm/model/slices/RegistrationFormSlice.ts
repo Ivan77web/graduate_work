@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import { RegistrationFormSchema } from '../types/RegistrationFormSchema';
 
 const initialState: RegistrationFormSchema = {
@@ -87,6 +88,24 @@ export const RegistrationFormSlice = createSlice({
         },
         setRepeatPasswordErrorText: (state, action: PayloadAction<string | null>) => {
             state.repeat_password.errorText = action.payload;
+        },
+        reset: (state) => {
+            state.name.value = '';
+            state.name.errorText = null;
+            state.age.value = '';
+            state.age.errorText = null;
+            state.education.value = '';
+            state.education.errorText = null;
+            state.varinat.value = '';
+            state.varinat.errorText = null;
+            state.gender.value = '';
+            state.gender.errorText = null;
+            state.login.value = '';
+            state.login.errorText = null;
+            state.password.value = '';
+            state.password.errorText = null;
+            state.repeat_password.value = '';
+            state.repeat_password.errorText = null;
         },
     },
 });

@@ -1,33 +1,28 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { User, userActions } from '@/entites/User';
-import { ModalLoginActions } from '@/widgets/modalLogin';
-import { LoginFormActions } from '@/entites/LoginForm';
+import { ModalRegistrationActions } from '@/widgets/modalRegistration';
+import { RegistrationFormActions } from '@/entites/RegistrationForm';
 
-interface LoginReqProps {
-    login: string;
-    password: string;
-}
-
-export const loginReq = createAsyncThunk<
+export const registartionReq = createAsyncThunk<
     User,
-    LoginReqProps,
+    Omit<User, 'id'>,
     ThunkConfig<string>
 >(
-    'login/loginByLogin',
-    async (authData, thunkApi) => {
+    'registartion',
+    async (regData, thunkApi) => {
         const { dispatch, extra, rejectWithValue } = thunkApi;
 
         try {
-            const response = await extra.api.post<User>('/login', authData);
+            const response = await extra.api.post<User>('/registration', regData);
 
             if (!response.data) {
                 throw new Error();
             }
 
-            dispatch(LoginFormActions.reset());
+            dispatch(RegistrationFormActions.reset());
             dispatch(userActions.setAuthData(response.data));
-            dispatch(ModalLoginActions.close());
+            dispatch(ModalRegistrationActions.close());
 
             return response.data;
         } catch (e: any) {

@@ -38,8 +38,6 @@ export const Login = () => {
         const error = isError();
 
         if (!error) {
-            dispatch(LoginFormActions.setLogin(''));
-            dispatch(LoginFormActions.setPassword(''));
             dispatch(loginReq({ login: loginForm.login.value, password: loginForm.password.value }))
         }
     };
