@@ -7,6 +7,7 @@ import { Text } from "@/shared/ui/Text";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { CodeEditor } from "@/shared/ui/CodeEditor";
 
 import { LessonPageContent } from "./LessonPageContent";
 
@@ -50,13 +51,18 @@ const LessonPage = () => {
                     color="black"
                 />
 
-                <VStack gap="16" max>
+                {/* <VStack gap="16" max>
                     {
                         lessonData?.content.map((elem, index) =>
                             <LessonPageContent content={elem} key={index} />
                         )
                     }
-                </VStack>
+                </VStack> */}
+
+                <CodeEditor 
+                    interestingAnswer="123"
+                    callback={() => console.log('Правильный ответ')}
+                />
             </VStack>
         </Page>
     )

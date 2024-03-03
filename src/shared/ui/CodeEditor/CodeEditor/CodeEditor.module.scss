@@ -1,0 +1,24 @@
+.CodeEditor{
+    height: 400px;
+    background: white;
+}
+
+.textarea{
+    font-family: var(--font-family-code);
+    width: 100%;
+    height: 400px;
+    resize: none;
+    padding: 8px;
+    outline: none;
+}
+
+.terminalBlock{
+    height: 100%;
+    padding: 8px;
+}
+
+.infoBlock{
+    width: 100%;
+    height: 252px;
+    overflow-y: scroll;
+}
