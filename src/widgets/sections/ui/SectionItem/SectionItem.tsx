@@ -6,6 +6,8 @@ import { HStack } from '@/shared/ui/Stack';
 import { Icon } from '@/shared/ui/Icon';
 import { Text } from '@/shared/ui/Text';
 import Check from '@/shared/assets/icons/check.svg';
+import { AppLink } from '@/shared/ui/AppLink';
+import { getPathLesson } from '@/shared/const/router';
 
 interface SectionItemProps {
     className?: string;
@@ -14,25 +16,30 @@ interface SectionItemProps {
 
 export const SectionItem = memo(({ className, section }: SectionItemProps) => {
     return (
-        <HStack
-            className={classNames(cl.SectionItem, {}, [className])}
-            justify='between'
-            max
+        <AppLink 
+            to={getPathLesson(section.id)}
+            className={cl.link}
         >
-            <Text
-                text={section.id + " " + section.title}
-                bold
-                size='14'
-                color='gray-dark'
-            />
+            <HStack
+                className={classNames(cl.SectionItem, {}, [className])}
+                justify='between'
+                max
+            >
+                <Text
+                    text={section.id + ". " + section.title}
+                    bold
+                    size='14'
+                    color='gray-dark'
+                />
 
 
-            {/* TODO Захардкожена галочка */}
-            <Icon
-                className={cl.icon}
-                Svg={Check}
-                height={20}
-            />
-        </HStack>
+                {/* TODO Захардкожена галочка */}
+                <Icon
+                    className={cl.icon}
+                    Svg={Check}
+                    height={20}
+                />
+            </HStack>
+        </AppLink>
     );
 });

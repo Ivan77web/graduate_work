@@ -24,6 +24,7 @@ export const buildWebpackConfig = (options: BuildProps): webpack.Configuration =
             filename: '[name].[contenthash].js',
             path: paths.build,
             clean: true,
+            publicPath: '/',
         },
         plugins: buildPlugins(paths),
         devtool: isDev ? 'eval-cheap-module-source-map' : undefined,

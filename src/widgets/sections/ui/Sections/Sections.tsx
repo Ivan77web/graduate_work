@@ -45,14 +45,14 @@ export const Sections = memo(({ className }: SectionsProps) => {
     }
 
     return (
-        <VStack 
+        <VStack
             className={classNames(cl.Sections, {}, [className])}
             gap='16'
             max
         >
             {
                 sections.map((sec) => (
-                    <SectionItem section={sec} />
+                    <SectionItem key={sec.title} section={sec} />
                 ))
             }
         </VStack>

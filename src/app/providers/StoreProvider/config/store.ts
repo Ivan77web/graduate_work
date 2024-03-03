@@ -10,6 +10,7 @@ import { userReducer } from '@/entites/User';
 import { loginReducer } from '@/features/login';
 import { registartionReducer } from '@/features/registration';
 import { SectionsReducer } from '@/entites/Sections';
+import { LessonReducer } from '@/entites/Lesson';
 
 import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
@@ -28,6 +29,7 @@ export function createReduxStore(
         loginFeature: loginReducer,
         registrationFeature: registartionReducer,
         sections: SectionsReducer,
+        lesson: LessonReducer,
     };
 
     const reducerManager = createReducerManager(rootReducer);

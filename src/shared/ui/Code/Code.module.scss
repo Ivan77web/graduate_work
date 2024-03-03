@@ -1,0 +1,12 @@
+.code {
+    position: relative;
+    padding: 8px;
+    background: var(--gray);
+    width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+}
+
+.text{
+    font-family: var(--font-family-code);
+}
