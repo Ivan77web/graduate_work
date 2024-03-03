@@ -1,4 +1,4 @@
-import { SectionsPageAsync } from "./SectionsPage.async";
+import { SectionsPageAsync } from "./ui/SectionsPage/SectionsPage.async";
 
 export {
     SectionsPageAsync as SectionsPage

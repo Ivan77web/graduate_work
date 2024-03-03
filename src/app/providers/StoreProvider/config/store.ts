@@ -9,6 +9,7 @@ import { ModalLoginReducer } from '@/widgets/modalLogin';
 import { userReducer } from '@/entites/User';
 import { loginReducer } from '@/features/login';
 import { registartionReducer } from '@/features/registration';
+import { SectionsReducer } from '@/entites/Sections';
 
 import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
@@ -26,6 +27,7 @@ export function createReduxStore(
         user: userReducer,
         loginFeature: loginReducer,
         registrationFeature: registartionReducer,
+        sections: SectionsReducer,
     };
 
     const reducerManager = createReducerManager(rootReducer);

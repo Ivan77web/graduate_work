@@ -1,0 +1,14 @@
+.SectionItem{
+    height: 40px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.SectionItem:hover{
+    background: var(--gray);
+    transition: 0.05s linear;
+}
+
+.icon{
+    fill: var(--green);
+}
