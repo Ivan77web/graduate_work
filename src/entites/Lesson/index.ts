@@ -2,4 +2,4 @@ export { getLessonData, getLessonIsLoadind, getLessonError } from "./model/selec
 
 export { getLesson } from "./model/services/getLesson";
 export { LessonActions, LessonReducer } from "./model/slices/LessonSlice"
-export type { LessonSchema } from './model/types/Lesson';
+export type { LessonSchema, LessonContent } from './model/types/Lesson';

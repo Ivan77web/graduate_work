@@ -7,5 +7,12 @@ export interface LessonSchema {
 export interface Lesson {
     id: string,
     title: string,
-    content: string,
+    content: LessonContent[],
+}
+
+export type LessonContentType = 'header' | 'text' | 'code';
+
+export interface LessonContent {
+    type: LessonContentType;
+    content: string;
 }

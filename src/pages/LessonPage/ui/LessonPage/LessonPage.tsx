@@ -8,6 +8,8 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
+import { LessonPageContent } from "./LessonPageContent";
+
 const LessonPage = () => {
     const { id } = useParams<{ id: string }>();
     const dispatch = useAppDispatch();
@@ -48,12 +50,12 @@ const LessonPage = () => {
                     color="black"
                 />
 
-                <VStack>
-                    <Text
-                        text={lessonData?.title}
-                        size="16"
-                        color="black"
-                    />
+                <VStack gap="16" max>
+                    {
+                        lessonData?.content.map((elem, index) =>
+                            <LessonPageContent content={elem} key={index} />
+                        )
+                    }
                 </VStack>
             </VStack>
         </Page>
