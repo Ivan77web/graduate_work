@@ -36,6 +36,13 @@
     padding: 16px 32px;
 }
 
+.outline_green {
+    background: none;
+    border: 2px solid var(--green);
+    color: var(--green);
+    padding: 16px 32px;
+}
+
 .withAddon {
     padding: 0 16px;
 }

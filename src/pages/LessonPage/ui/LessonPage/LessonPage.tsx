@@ -7,6 +7,9 @@ import { Text } from "@/shared/ui/Text";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { Task } from "@/shared/ui/Task";
+
+import { TASKS } from "../../lib/constants";
 
 import { LessonPageContent } from "./LessonPageContent";
 
@@ -54,6 +57,27 @@ const LessonPage = () => {
                     {
                         lessonData?.content.map((elem, index) =>
                             <LessonPageContent content={elem} key={index} />
+                        )
+                    }
+                </VStack>
+
+                <Text
+                    text={TASKS}
+                    size="30"
+                    bold
+                    color="black"
+                />
+
+                <VStack gap="16" max>
+                    {
+                        lessonData?.tasks?.map((task, index) =>
+                            <Task
+                                key={task.task}
+                                task={task.task}
+                                interestingAnswer={task.interestingAnswer}
+                                callback={() => console.log('Правильный ответ')}
+                                index={index + 1}
+                            />
                         )
                     }
                 </VStack>
